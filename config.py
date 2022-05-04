@@ -35,6 +35,7 @@ class Config:
     _chain_url = os.environ.get("CHAIN_URL", "https://bombay-lcd.terra.dev")
     _minimum_ust_amount = int(os.environ.get("UST_MIN_AMOUNT_ALERT", 2))
     _maximum_ltv_allowed = 100/60
+    _basset = {}
     _address = {}
     _address["mmCustody"] = os.environ.get(
         "ANCHOR_mmCustody",
@@ -48,7 +49,7 @@ class Config:
     BLOCKS_PER_YEAR = 4656810
     CLAIM_FEES = 0.762
     FORCED_FEES = 1
-    MAX_ALLOWED_LTV = 60
+    MAX_ALLOWED_LTV = 85
     _finder_base_url = "https://finder.terra.money"
 
     _log.info("===========================================")

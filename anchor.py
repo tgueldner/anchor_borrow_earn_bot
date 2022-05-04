@@ -47,6 +47,9 @@ class Anchor:
                 if (isinstance(response[val], str)):
                     if ("terra" in response[val]):
                         Config._address[val] = response[val]
+                if "basset_info" in val:
+                    Config._basset = response[val]
+
 
         except LCDResponseError as e:
             Config._log.exception(e)

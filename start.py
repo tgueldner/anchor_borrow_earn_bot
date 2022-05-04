@@ -144,7 +144,7 @@ class Main:
                 message += "🟢 Target LTV: <code>{}%</code>\n".format(Config._target_ltv)
                 message += "🔴 Max LTV: <code>{}%</code>\n".format(Config._max_ltv)
                 message += "🟠 Min LTV: <code>{}%</code>\n".format(Config._min_ltv)
-                message += "🌖 bLuna price: <code>{}$</code>\n".format(bluna_price)
+                message += "🌖 {} price: <code>{}$</code>\n".format(Config._basset["symbol"], bluna_price)
                 message += "☠️ Liquidation price: <code>{}$</code>\n".format(
                     liquidation_price
                 )
