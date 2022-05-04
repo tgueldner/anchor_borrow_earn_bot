@@ -7,9 +7,8 @@ from config import Config
 class TerraWallet:
     def __init__(self, wallet_name, mnemonic):
 
-        self._mnemonic = mnemonic
         self._wallet_name = wallet_name
-        self._wallet = TerraChain.chain.wallet(MnemonicKey(self._mnemonic))
+        self._wallet = TerraChain.chain.wallet(MnemonicKey(mnemonic))
         self._base_explorer_url = "{}/{}".format(
             Config._finder_base_url,
             TerraChain.chain.chain_id,

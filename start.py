@@ -15,8 +15,8 @@ from config import Config
 class Main:
     def __init__(self):
 
-        self._wallet = TerraWallet(Config._wallet_name, Config._mnemonic)
-        self._loop_check_borrow = Looper(self.do_check_borrow, 20)
+        self._wallet = TerraWallet(Config._wallet_name, Config.mnemonic())
+        self._loop_check_borrow = Looper(self.do_check_borrow, 60)
 
         bot_telegram.events.addObserver(
             self,

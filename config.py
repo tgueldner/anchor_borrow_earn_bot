@@ -8,6 +8,11 @@ load_dotenv(dotenv_path=".env")
 
 
 class Config:
+
+    @staticmethod
+    def mnemonic():
+        return base64.b64decode(os.environ.get("WALLET_MNEMONIC")).decode("utf-8")
+
     VERSION = "2.0.7"
     _log = logging.getLogger("anchor_borrow")
     formatter = logging.Formatter(
@@ -21,7 +26,6 @@ class Config:
     _log.addHandler(console_handler)
 
     _wallet_name = os.environ.get("WALLET_NAME", "Wallet#1")
-    _mnemonic = base64.b64decode(os.environ.get("WALLET_MNEMONIC")).decode("utf-8")
     _telegram_token = os.environ.get("TELEGRAM_TOKEN", None)
     _telegram_chat_id = int(os.environ.get("TELEGRAM_CHAT_ID", 0))
     _target_ltv = float(os.environ.get("TARGET_TVL", 35))
